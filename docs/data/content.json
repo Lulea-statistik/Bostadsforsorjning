@@ -124,7 +124,233 @@
       "value": null
     }
   ],
-  "goals": [
+  "policyGoals": [
+    {
+      "id": "framtiden",
+      "title": "Fler bostäder för framtiden",
+      "page": 12,
+      "summary": "Öka bostadsbyggandet och skapa beredskap för befolkningstillväxt och förändrade behov."
+    },
+    {
+      "id": "bestandet",
+      "title": "Vidareutveckla det befintliga bostadsbeståndet",
+      "page": 12,
+      "summary": "Ta tillvara och utveckla befintliga bostäder genom hållbara renoveringar, anpassningar och ny användning."
+    },
+    {
+      "id": "allas-behov",
+      "title": "Bostäder för allas behov",
+      "page": 13,
+      "summary": "Möta invånares olika bostadsbehov och förbättra möjligheterna på bostadsmarknaden."
+    },
+    {
+      "id": "landsbygderna",
+      "title": "Främja möjligheten att bo på landsbygderna",
+      "page": 13,
+      "summary": "Underlätta kvarboende, bostadsbyggande och variation av bostäder på landsbygderna."
+    },
+    {
+      "id": "attraktiva",
+      "title": "Utveckling av attraktiva bostäder",
+      "page": 13,
+      "summary": "Skapa bostäder och bostadsmiljöer med goda kvaliteter, service och hållbarhet."
+    }
+  ],
+  "measures": [
+    {
+      "id": "i01",
+      "goalId": "framtiden",
+      "page": 14,
+      "name": "Planberedskap",
+      "description": "Ha planberedskap för 2 500 bostäder.",
+      "responsible": "Stadsbyggnadsnämnden"
+    },
+    {
+      "id": "i02",
+      "goalId": "framtiden",
+      "page": 14,
+      "name": "Markberedskap och markanvisningsprocess",
+      "description": "Säkra långsiktigt markinnehav och vidareutveckla markanvisningsprocessen.",
+      "responsible": "Kommunstyrelsen"
+    },
+    {
+      "id": "i03",
+      "goalId": "framtiden",
+      "page": 15,
+      "name": "Blandning av upplåtelseformer och bostadstyper",
+      "description": "Underlätta komplettering med underrepresenterade bostadstyper i respektive område.",
+      "responsible": "Stadsbyggnadsnämnden"
+    },
+    {
+      "id": "i04",
+      "goalId": "framtiden",
+      "page": 15,
+      "name": "Entreprenörsbostäder",
+      "description": "Förbereda permanenta och tillfälliga bostäder för entreprenörer och beakta social hållbarhet.",
+      "responsible": "Kommunstyrelsen"
+    },
+    {
+      "id": "i05",
+      "goalId": "framtiden",
+      "page": 15,
+      "name": "Bostäder vid oväntade händelser",
+      "description": "Ta fram beredskapsplan för bostäder vid större kriser.",
+      "responsible": "Kommunstyrelsen"
+    },
+    {
+      "id": "i06",
+      "goalId": "bestandet",
+      "page": 16,
+      "name": "Plan för hållbar renovering",
+      "description": "Lulebo ska ta fram en plan med fokus på social hållbarhet, delaktighet och barnets bästa.",
+      "responsible": "Kommunstyrelsen"
+    },
+    {
+      "id": "i07",
+      "goalId": "bestandet",
+      "page": 16,
+      "name": "Samtal med fastighetsägare",
+      "description": "Samverka med fastighetsägare om utveckling och hållbarhet i befintligt bestånd.",
+      "responsible": "Kommunstyrelsen"
+    },
+    {
+      "id": "i08",
+      "goalId": "bestandet",
+      "page": 16,
+      "name": "Tomma kommunala lokaler",
+      "description": "Utveckla arbetet med nya användningar av kommunala lokaler, mark och byggnader.",
+      "responsible": "Stadsbyggnadsnämnden"
+    },
+    {
+      "id": "i09",
+      "goalId": "allas-behov",
+      "page": 17,
+      "name": "Öka antalet gruppbostäder",
+      "description": "Påbörja tio nya gruppbostäder fram till 2030 och pröva särskilda boenden vid större exploateringar.",
+      "responsible": "Socialnämnden / Stadsbyggnadsnämnden"
+    },
+    {
+      "id": "i10",
+      "goalId": "allas-behov",
+      "page": 17,
+      "name": "Öka antalet servicebostäder",
+      "description": "Utöka servicebostäder främst där enheter redan finns; utveckla samverkan mellan förvaltningarna och Lulebo.",
+      "responsible": "Socialnämnden / Stadsbyggnadsnämnden"
+    },
+    {
+      "id": "i11",
+      "goalId": "allas-behov",
+      "page": 18,
+      "name": "Handlingsutrymme för kommunen",
+      "description": "Vid markanvisning av hyresrätter ska minst fem procent av lägenheterna erbjudas kommunen.",
+      "responsible": "Stadsbyggnadsnämnden"
+    },
+    {
+      "id": "i12",
+      "goalId": "allas-behov",
+      "page": 18,
+      "name": "Fler vård- och omsorgsboenden",
+      "description": "Påbörja två boenden med platser enligt socialnämndens behovsbedömning.",
+      "responsible": "Socialnämnden"
+    },
+    {
+      "id": "i13",
+      "goalId": "allas-behov",
+      "page": 18,
+      "name": "Samnyttja och samverka",
+      "description": "Utreda särskilda boenden i kombination med annan kommunal verksamhet.",
+      "responsible": "Kommunstyrelsen"
+    },
+    {
+      "id": "i14",
+      "goalId": "allas-behov",
+      "page": 19,
+      "name": "Fler trygghetsboenden",
+      "description": "Främja trygghetsboenden genom kommunal finansiell medverkan och utvärdera satsningen.",
+      "responsible": "Miljö- och byggnadsnämnden"
+    },
+    {
+      "id": "i15",
+      "goalId": "allas-behov",
+      "page": 19,
+      "name": "Minska hemlöshet",
+      "description": "Utveckla samarbetet mellan kommunen, Lulebo och andra fastighetsägare.",
+      "responsible": "Socialnämnden"
+    },
+    {
+      "id": "i16",
+      "goalId": "allas-behov",
+      "page": 19,
+      "name": "Sänk trösklarna på bostadsmarknaden",
+      "description": "Samverka för innovativa lösningar som ger fler tillträde till bostadsmarknaden.",
+      "responsible": "Kommunstyrelsen"
+    },
+    {
+      "id": "i17",
+      "goalId": "landsbygderna",
+      "page": 20,
+      "name": "Exploateringsmöjligheter på landsbygderna",
+      "description": "Utreda vilka platser som bör utvecklas och var fördjupad planering behövs.",
+      "responsible": "Kommunstyrelsen"
+    },
+    {
+      "id": "i18",
+      "goalId": "landsbygderna",
+      "page": 20,
+      "name": "Lokalt byggande",
+      "description": "Stödja småskaligt byggande och utreda kommunal borgen för lokala initiativ utan vinstintresse.",
+      "responsible": "Kommunstyrelsen"
+    },
+    {
+      "id": "i19",
+      "goalId": "landsbygderna",
+      "page": 20,
+      "name": "Lägenheter på landsbygderna",
+      "description": "Främja varierade bostadsformer i markanvisningar, särskilt lägenheter och hyresrätter.",
+      "responsible": "Kommunstyrelsen"
+    },
+    {
+      "id": "i20",
+      "goalId": "attraktiva",
+      "page": 21,
+      "name": "Fler bostäder i Centrum",
+      "description": "Prioritera förtätning och nya bostäder i Centrum.",
+      "responsible": "Kommunstyrelsen"
+    },
+    {
+      "id": "i21",
+      "goalId": "attraktiva",
+      "page": 21,
+      "name": "Framhäva och tillgängliggöra områdeskvaliteter",
+      "description": "Lyfta fram och tillgängliggöra bostadsområdens natur, rekreation och andra kvaliteter.",
+      "responsible": "Stadsbyggnadsnämnden / Kommunstyrelsen"
+    },
+    {
+      "id": "i22",
+      "goalId": "attraktiva",
+      "page": 22,
+      "name": "Bostadsområden och byar ska ha förutsättningar för god livskvalitet",
+      "description": "Samordna bostadsplanering med service samt genomföra marknads- och kundanalyser.",
+      "responsible": "Kommunstyrelsen"
+    },
+    {
+      "id": "i23",
+      "goalId": "attraktiva",
+      "page": 22,
+      "name": "Inflyttningsservice",
+      "description": "Skapa inflyttningsservice och flyttlots för äldre.",
+      "responsible": "Kommunstyrelsen / Socialnämnden"
+    },
+    {
+      "id": "i24",
+      "goalId": "attraktiva",
+      "page": 22,
+      "name": "Hållbart byggande",
+      "description": "Främja hållbart byggande genom planering, markanvisning och dialog.",
+      "responsible": "Kommunstyrelsen"
+    }
+  ],
+  "previousPlanningFigures": [
     {
       "value": "100 000 invånare",
       "description": "Befolkningsmål 2040",
