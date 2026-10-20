@@ -40,6 +40,21 @@ const housingTerms=[
 ['Strukturell hemlöshet','Bostadssociala begrepp','Brist på egen bostad främst på grund av ekonomiska och bostadsmarknadsrelaterade hinder.','Analysbegrepp, inte boendeform.'],
 ['Dold hemlöshet','Bostadssociala begrepp','Ofrivilligt och tillfälligt boende hos andra utan eget varaktigt kontrakt.','Avgränsas enligt vald statistikdefinition.'],
 ['Avhysningsförebyggande arbete','Bostadssociala begrepp','Insatser som syftar till att undvika vräkning.','Arbetssätt, inte boendeform.']
+,
+["Stödbostad","Funktionsnedsättning","Benämning som Luleå kommun använder bland bostäder med stöd för personer med funktionsnedsättning.","Verifiera om enskild insats beslutas enligt SoL eller LSS. Källa: lulea.se/omsorg--stod/funktionsnedsattning/bostader.html"],
+["Bostadsanpassning","Boende med stöd","Anpassningar av bostadens fasta funktioner för personer med funktionsnedsättning.","Åtgärd i bostaden, inte en särskild boendeform. Källa: lulea.se, Bostäder för dig som har en funktionsnedsättning."],
+["Trygghetslarm","Boende med stöd","Larmtjänst som kan underlätta trygghet och kvarboende i den ordinarie bostaden.","Stödinsats, inte en bostadstyp. Källa: lulea.se, Bostäder för dig som har en funktionsnedsättning."],
+["Växelvård","Äldreboenden","Återkommande korttidsvistelse som bland annat kan avlasta anhöriga.","Typ av korttidsplats; skilj från permanent SÄBO. Källa: Luleå socialnämnds avgiftsunderlag 2025."],
+["Avlastningsplats","Äldreboenden","Korttidsplats som kan avlasta anhöriga som vårdar närstående.","Tillfällig insats; skilj från permanent bostad. Källa: Luleå socialnämnds avgiftsunderlag 2025."],
+["Trivselvärd / trygghetsvärd","Äldreboenden","Personal som ordnar social gemenskap och aktiviteter på trygghetsboende.","Servicefunktion, inte hemtjänst eller särskild boendeform. Källa: lulea.se/omsorg--stod/aldre-och-seniorer/boende-for-aldre/trygghetsboenden-och-seniorboenden.html"],
+["Allmännyttan","Bostadsmarknad och planering","Kommunalt allmännyttigt bostadsbolag som främjar bostadsförsörjningen; Lulebo är kommunens bostadsbolag.","Källa: Luleå bostadsförsörjningsprogram, definitioner s. 24–25."],
+["Upplåtelseform","Bostadsmarknad och planering","Sätt att förfoga över bostaden: exempelvis hyresrätt, bostadsrätt, äganderätt och kooperativ hyresrätt.","Skilj från hustyp och social insats. Källa: Luleå bostadsförsörjningsprogram, definitioner s. 24–25."],
+["Markanvisning","Bostadsmarknad och planering","Överenskommelse som ger en byggaktör möjlighet att under begränsad tid förhandla om kommunal mark för byggande.","Planeringsverktyg, inte ett bostadsutfall. Källa: Luleå bostadsförsörjningsprogram, definitioner s. 24–25."],
+["Detaljplan","Bostadsmarknad och planering","Juridiskt bindande reglering av mark- och vattenanvändning och möjlig bebyggelse inom ett område.","Planberedskap är inte detsamma som färdigställda bostäder. Källa: Luleå bostadsförsörjningsprogram, definitioner s. 24–25."],
+["Tomtkö för småhus","Bostadsmarknad och planering","Kommunal kö för privatpersoner som vill köpa kommunala småhustomter.","Kö till tomt, inte hyresbostad. Källa: lulea.se/samhalle--utveckling/mark-och-exploatering/mark-for-bostadsbyggande.html"],
+["Småhustomt","Bostadsmarknad och planering","Mark avsedd för uppförande av småhus, med eller utan detaljplan.","Inte en färdig bostad. Källa: Luleå, Mark för bostadsbyggande."],
+["Förtätning","Bostadsmarknad och planering","Ny bebyggelse inom eller i direkt anslutning till befintliga bebyggelsemiljöer.","Planeringsbegrepp. Källa: Luleå, planhandling för Porsön."],
+["Specialbostad","Bostadsmarknad och planering","Bostad avsedd för en särskild grupp, exempelvis äldre eller personer med funktionsnedsättning.","Statistiska definitioner kan skilja sig från biståndsbeslut. Källa: Luleå, planhandling för Porsön."]
 ];
 const housingLaws=[
 ['Lagen om psykiatrisk tvångsvård (LPT)','1991:1128','Reglerar psykiatrisk tvångsvård under vissa förutsättningar. Vård kan vara sluten eller öppen. LPT är inte en boendeform.','https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-19911128-om-psykiatrisk-tvangsvard_sfs-1991-1128/'],
