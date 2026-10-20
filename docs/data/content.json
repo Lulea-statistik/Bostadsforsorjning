@@ -1,0 +1,165 @@
+{
+  "programme": "Bostadsförsörjningsprogram 2022–2030",
+  "source": "https://www.lulea.se/download/18.2b7bdc7f183d5df682e2e379/1662618513901/Bostadsf%C3%B6rs%C3%B6rjningsprogram.pdf",
+  "verification": "Preliminär extraktion; sid- och ordalydelsekontroll återstår",
+  "indicators": [
+    {
+      "id": 1,
+      "name": "Planberedskap",
+      "topic": "Bostadsbyggande",
+      "unit": "Möjliga bostäder",
+      "provider": "Luleå kommun",
+      "pages": "14–15, 23",
+      "definition": "Planberedskap enligt kommunens planeringsdefinition.",
+      "value": null
+    },
+    {
+      "id": 2,
+      "name": "Färdigställda bostäder",
+      "topic": "Bostadsbyggande",
+      "unit": "Bostäder per år",
+      "provider": "SCB / Luleå kommun",
+      "pages": "15, 23",
+      "definition": "Antal färdigställda bostäder inom kommunen under kalenderåret.",
+      "value": null
+    },
+    {
+      "id": 3,
+      "name": "Befolkningsökning",
+      "topic": "Befolkning",
+      "unit": "Personer per år",
+      "provider": "SCB",
+      "pages": "15, 23",
+      "definition": "Förändring av folkmängden mellan två årsslut.",
+      "value": null
+    },
+    {
+      "id": 4,
+      "name": "Kötid hos Lulebo",
+      "topic": "Bostadsmarknad",
+      "unit": "Dagar",
+      "provider": "Lulebo",
+      "pages": "15, 23",
+      "definition": "Kötid för att erhålla bostad; exakt urvalsdefinition ska fastställas.",
+      "value": null
+    },
+    {
+      "id": 5,
+      "name": "Medel- och medianhyra",
+      "topic": "Bostadsmarknad",
+      "unit": "Kr/m²/år",
+      "provider": "Luleå kommun / bostadsbolag",
+      "pages": "16, 23",
+      "definition": "Hyra i befintligt bestånd; nybyggnation exkluderas enligt programindikatorn.",
+      "value": null
+    },
+    {
+      "id": 6,
+      "name": "Väntetid till äldreboende – erbjudande om plats",
+      "topic": "Särskilda boenden",
+      "unit": "Dagar",
+      "provider": "Luleå kommun",
+      "pages": "17, 23",
+      "definition": "Från ansökan till erbjudande om plats på äldreboende.",
+      "value": null
+    },
+    {
+      "id": 7,
+      "name": "Väntetid till särskilt boende – inflyttning",
+      "topic": "Särskilda boenden",
+      "unit": "Dagar",
+      "provider": "Luleå kommun",
+      "pages": "17, 23",
+      "definition": "Från ansökan till första erbjudna inflyttningsdatum.",
+      "value": null
+    },
+    {
+      "id": 8,
+      "name": "Trångboddhet i flerbostadshus",
+      "topic": "Boendevillkor",
+      "unit": "Procent",
+      "provider": "SCB / Boverket",
+      "pages": "17, 23",
+      "definition": "Andel trångbodda i flerbostadshus; använd explicit trångboddhetsnorm.",
+      "value": null
+    },
+    {
+      "id": 9,
+      "name": "Bruttoökning av bostäder på landsbygderna",
+      "topic": "Landsbygd",
+      "unit": "Bostäder per år",
+      "provider": "Luleå kommun",
+      "pages": "20, 23",
+      "definition": "Bruttoökning, inte nödvändigtvis nettotillskott.",
+      "value": null
+    },
+    {
+      "id": 10,
+      "name": "Invånare per åldersgrupp på landsbygderna",
+      "topic": "Landsbygd",
+      "unit": "Personer",
+      "provider": "SCB / Luleå kommun",
+      "pages": "20, 23",
+      "definition": "Antal boende på landsbygderna efter åldersgrupp och geografisk avgränsning.",
+      "value": null
+    },
+    {
+      "id": 11,
+      "name": "Ärenden hos inflyttningsservice och flyttlots",
+      "topic": "Service",
+      "unit": "Ärenden per år",
+      "provider": "Luleå kommun",
+      "pages": "21, 23",
+      "definition": "Registrerade ärenden; registreringsregler måste dokumenteras.",
+      "value": null
+    },
+    {
+      "id": 12,
+      "name": "Nya bostäder i Centrum",
+      "topic": "Geografi",
+      "unit": "Bostäder per år",
+      "provider": "Luleå kommun",
+      "pages": "21, 23",
+      "definition": "Nya bostäder inom en fastställd geografisk Centrumavgränsning.",
+      "value": null
+    }
+  ],
+  "goals": [
+    {
+      "value": "100 000 invånare",
+      "description": "Befolkningsmål 2040",
+      "type": "Mål",
+      "verified": false
+    },
+    {
+      "value": "400–800 bostäder per år",
+      "description": "Bedömt årligt byggbehov",
+      "type": "Planeringsbedömning",
+      "verified": false
+    },
+    {
+      "value": "2 500 bostäder",
+      "description": "Planberedskap som ska upprätthållas",
+      "type": "Mål",
+      "verified": false
+    },
+    {
+      "value": "+1 100 invånare per år",
+      "description": "Planeringsantagande om tillväxt",
+      "type": "Antagande",
+      "verified": false
+    },
+    {
+      "value": "10 gruppbostäder",
+      "description": "Påbörjade gruppbostäder till 2030",
+      "type": "Insatsmål",
+      "verified": false
+    },
+    {
+      "value": "Minst 5 %",
+      "description": "Andel hyreslägenheter som erbjuds kommunen vid markanvisning",
+      "type": "Insatsmål",
+      "verified": false
+    }
+  ]
+}
