@@ -15,3 +15,8 @@ header.hero{padding:0;background:#fff;overflow:hidden;color:var(--ink)}
  .hero-vision{flex:0 0 36%}
  .hero-vision img{object-position:center top}
 }
+
+/* General rule for glossary tables: wrap complete cell content instead of clipping it. */
+#definitioner .table-wrap table{min-width:0;table-layout:fixed}
+#definitioner .table-wrap th,#definitioner .table-wrap td{white-space:normal;overflow-wrap:anywhere;word-break:normal;min-width:0}
+#definitioner .table-wrap td a{overflow-wrap:anywhere}
