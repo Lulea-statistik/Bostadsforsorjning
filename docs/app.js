@@ -6,6 +6,7 @@ const housingTerms=[
 ['Bostadssocialt kontrakt','Sociala kontrakt','Samlingsnamn för hyreslösningar kopplade till bostadssociala insatser.','Begreppet definieras lokalt.'],
 ['Övergångskontrakt','Sociala kontrakt','Tidsbegränsad lösning med möjlig övergång till eget kontrakt.','Avtal, inte en bostadstyp.'],
 ['Försökslägenhet','Sociala kontrakt','Lägenhet under försöksperiod med möjlighet att etablera självständigt boende.','Lokala villkor och uppföljning.'],
+['Träningsboende','Boende med stöd','Boende med individuellt stöd där personen kan träna vardagsrutiner och färdigheter för ett mer självständigt boende.','Verksamhetsbenämning som kan skilja sig mellan kommuner; inte en särskild lagstadgad boendeform.'],
 ['Träningslägenhet','Sociala kontrakt','Boende där praktiska färdigheter och stödinsatser kring boendet kan prövas.','Boendestöd och kontraktsform måste hållas isär.'],
 ['Andrahandskontrakt via socialtjänsten','Sociala kontrakt','Socialtjänsten eller kommunen är förstahandshyresgäst och hyr ut i andra hand.','Hyresrättsliga och sociala villkor kan samverka.'],
 ['Kommunal hyresgaranti','Sociala kontrakt','Kommunen lämnar betalningsgaranti för att hjälpa hushåll att få eget kontrakt.','Garanti, inte särskild boendeform.'],
@@ -41,6 +42,8 @@ const housingTerms=[
 ['Avhysningsförebyggande arbete','Bostadssociala begrepp','Insatser som syftar till att undvika vräkning.','Arbetssätt, inte boendeform.']
 ];
 const housingLaws=[
+['Lagen om psykiatrisk tvångsvård (LPT)','1991:1128','Reglerar psykiatrisk tvångsvård under vissa förutsättningar. Vård kan vara sluten eller öppen. LPT är inte en boendeform.','https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-19911128-om-psykiatrisk-tvangsvard_sfs-1991-1128/'],
+['Öppen psykiatrisk tvångsvård (ÖPT)','Vårdform enligt LPT','Vård utanför slutenvården med särskilda villkor och samordnad vårdplan. ÖPT är ingen fristående lag och innebär inte i sig rätt till eller beslut om en viss boendeform.','https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-19911128-om-psykiatrisk-tvangsvard_sfs-1991-1128/'],
 ['Socialtjänstlagen (SoL)','2025:400','Socialnämndens ansvar för stöd och hjälp, äldreomsorg, särskilt boende, boende med särskilt stöd samt vissa placeringsformer.','https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/socialtjanstlag-2025400_sfs-2025-400/'],
 ['Lagen om stöd och service till vissa funktionshindrade (LSS)','1993:387','Reglerar bl.a. korttidsvistelse, boende för barn och ungdomar och bostad med särskild service eller särskilt anpassad bostad för vuxna, 9 §.','https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-1993387-om-stod-och-service-till-vissa_sfs-1993-387/'],
 ['Lagen med särskilda bestämmelser om vård av unga (LVU)','1990:52','Reglerar tvångsvård för vissa barn och unga. LVU är en rättslig grund för vård, inte en egen boendetyp.','https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-199052-med-sarskilda-bestammelser-om_sfs-1990-52/'],
