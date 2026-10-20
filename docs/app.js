@@ -24,7 +24,7 @@ const housingTerms=[
 ['HVB – hem för vård eller boende','Skydd och vård','Verksamhet som tar emot personer för vård eller behandling i förening med boende.','SoL; kan även användas vid placering enligt LVU.'],
 ['Särskilt ungdomshem (SiS)','Skydd och vård','Statlig vårdform för unga med särskilda behov, inklusive placering enligt LVU.','LVU; inte ett vanligt kommunalt hyresboende.'],
 ['Familjehem','Skydd och vård','Enskilt hem som på socialnämndens uppdrag tar emot barn eller vuxna.','SoL eller LVU beroende på vårdgrund.'],
-['Seniorboende 55+/65+','Äldreboenden','Vanlig bostad med åldersgräns, ibland särskilt tillgänglig och med gemenskap.','Normalt inte behovsprövat enligt SoL.'],
+['Seniorboende 55+/65+','Äldreboenden','Ordinarie bostäder med åldersvillkor, ibland med särskild tillgänglighet och gemenskap.','Luleå kommun beskriver sina senior- och trygghetsboenden som bostäder för personer från 65 år; ålderskrav kan variera hos andra aktörer.'],
 ['Trygghetsboende','Äldreboenden','Vanliga bostäder för äldre med fokus på trygghet, gemenskap och tillgänglighet.','Inget SoL-biståndsbeslut för vanlig trygghetsbostad.'],
 ['Individuellt behovsprövat trygghetsboende','Äldreboenden','Boende för äldre med stödbehov och risk för isolering men utan behov av heldygnsomsorg.','SoL 2025:400, 8 kap. 4 § andra stycket.'],
 ['SÄBO – särskilt boende för äldre','Äldreboenden','Särskild boendeform för äldre som behöver omvårdnad och särskilt stöd.','SoL 2025:400, 8 kap. 4 § första stycket.'],
