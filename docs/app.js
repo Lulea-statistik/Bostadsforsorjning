@@ -15,7 +15,7 @@ const housingTerms=[
 ['Jourboende','Akuta boenden','Snabbt ordnat boende vid akut socialt behov.','Kräver definition av verksamhet och målgrupp.'],
 ['Skyddat boende','Skydd och vård','Boende med tillfälligt skydd och individanpassat stöd vid våld eller hot.','SoL 2025:400, 9 kap.'],
 ['Genomgångsboende','Tillfälliga boenden','Övergångsboende i väntan på mer varaktig bostad.','Varierande lokal benämning.'],
-['Evakueringsboende','Tillfälliga boenden','Tillfälligt boende när ordinarie bostad inte kan nyttjas.','Inte nödvändigtvis socialtjänstinsats.'],
+['Ersättningsboende (även evakueringsboende)','Tillfälliga boenden','Tillfälligt boende som ersätter den ordinarie bostaden när den inte kan användas, exempelvis vid renovering, skada eller utrymning.','Evakueringsboende används här som alternativ benämning. Inte nödvändigtvis en socialtjänstinsats.'],
 ['Korttidsboende','Tillfälliga boenden','Tidsbegränsat boende, exempelvis inom äldreomsorgen eller funktionshinderområdet.','Skilj olika målgrupper och beslutsgrunder. Källa: https://www.lulea.se/omsorg--stod/funktionsnedsattning/korttidsboende.html'],
 ['Bostad först','Boende med stöd','Arbetssätt som utgår från varaktig bostad med individuellt stöd vid behov.','Metod, inte en juridisk upplåtelseform.'],
 ['Lågtröskelboende','Boende med stöd','Boende med få inträdeskrav för personer med svag ställning på bostadsmarknaden.','Ingen enhetlig juridisk definition.'],
