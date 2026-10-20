@@ -20,3 +20,8 @@ header.hero{padding:0;background:#fff;overflow:hidden;color:var(--ink)}
 #definitioner .table-wrap table{min-width:0;table-layout:fixed}
 #definitioner .table-wrap th,#definitioner .table-wrap td{white-space:normal;overflow-wrap:anywhere;word-break:normal;min-width:0}
 #definitioner .table-wrap td a{overflow-wrap:anywhere}
+
+/* Reserve the same scrollbar space on short and long tabs so the content width never jumps. */
+html{scrollbar-gutter:stable}
+main.wrap{width:100%}
+main.wrap>.page{width:100%;min-width:0}
