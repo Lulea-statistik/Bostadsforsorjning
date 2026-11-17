@@ -17,20 +17,6 @@ def request(url, payload=None):
     with urllib.request.urlopen(urllib.request.Request(url, data=payload, headers=headers), timeout=45) as response:
         return json.load(response)
 
-def total_code(variable):
-    values = variable["values"]
-    labels = variable["valueTexts"]
-    pairs = list(zip(values, labels))
-    matches = [(v, s) for v, s in pairs if s.strip().casefold() in
-               ("totalt", "total", "samtliga", "samtliga åldrar", "alla åldrar", "båda könen", "summa", "alla civilstånd")]
-    if len(matches) == 1:
-        return matches[0][0]
-    # Variables with elimination=TRUE have a documented default aggregate.
-    default = variable.get("eliminationValueCode")
-    if variable.get("elimination") and default in values:
-        return default
-    raise ValueError(f"Can not establish total for {variable['code']}: {pairs[:12]}")
-
 def fetch_table(name):
     url = BASE + name
     metadata = request(url)
@@ -48,8 +34,15 @@ def fetch_table(name):
             if len(matches) != 1:
                 raise ValueError(f"Folkmangd measure ambiguous in {name}: {v['valueTexts']}")
             vals = matches
+        elif v.get("elimination") is True:
+            # PxWeb v1 automatically aggregates omitted eliminable dimensions.
+            # Civilstand and Kon have no explicit total code; omitting them is
+            # essential. For Alder SCB selects its supplied aggregate ("tot").
+            # This avoids retrieving many disaggregated cells and, in CKM
+            # tables, adding perturbations from separately protected cells.
+            continue
         else:
-            vals = [total_code(v)]
+            raise ValueError(f"Mandatory SCB dimension needs explicit handling: {code}")
         selectors.append({"code": code, "selection": {"filter": "item", "values": vals}})
     result = request(url, {"query": selectors, "response": {"format": "json"}})
     output = {}
