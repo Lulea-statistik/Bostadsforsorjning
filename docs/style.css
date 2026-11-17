@@ -39,3 +39,14 @@ main.wrap>.page{width:100%;min-width:0}
 .indicator-metadata>div{border-top:1px solid var(--line);padding-top:9px}
 .indicator-metadata dt{font-weight:700;margin-bottom:3px}
 .indicator-metadata dd{margin:0}
+
+.population-chart-controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0}
+.population-chart-controls select{min-width:115px}
+.population-chart-wrap{width:100%;overflow-x:auto}
+#population-change-chart{display:block;width:100%;min-width:520px;height:auto;background:white;border:1px solid var(--line);border-radius:8px}
+#population-change-chart text{font-family:inherit;fill:var(--ink);font-size:12px}
+#population-change-chart .axis{stroke:#aeb6bf;stroke-width:1}
+#population-change-chart .bar-positive{fill:#316c80}
+#population-change-chart .bar-negative{fill:#b63d51}
+#population-change-chart .bar-positive:hover,#population-change-chart .bar-negative:hover{opacity:.75}
+.population-data-table{min-width:0;margin-top:12px}
