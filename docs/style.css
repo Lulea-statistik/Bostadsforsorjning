@@ -25,3 +25,17 @@ header.hero{padding:0;background:#fff;overflow:hidden;color:var(--ink)}
 html{scrollbar-gutter:stable}
 main.wrap{width:100%}
 main.wrap>.page{width:100%;min-width:0}
+
+/* Pilot: expand population change indicator from the table. */
+#indicators tr[data-indicator-detail="population"]{cursor:pointer}
+#indicators tr[data-indicator-detail="population"]:hover{background:#faf1f3}
+#indicators .indicator-open{border:0;background:none;color:#8b0820;text-decoration:underline;text-underline-offset:3px;font:inherit;font-weight:650;cursor:pointer;padding:0;text-align:left}
+#indicators .indicator-open:focus-visible,#population-detail-close:focus-visible{outline:3px solid #8b0820;outline-offset:3px}
+.indicator-detail{margin-top:22px;border:1px solid var(--line);border-left:4px solid var(--red);border-radius:8px;padding:22px;background:#fcfcfd}
+.indicator-detail-heading{display:flex;justify-content:space-between;align-items:start;gap:12px}
+.indicator-detail-heading h3{margin:0 0 12px}
+#population-detail-close{background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:6px;cursor:pointer;font:inherit}
+.indicator-metadata{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0}
+.indicator-metadata>div{border-top:1px solid var(--line);padding-top:9px}
+.indicator-metadata dt{font-weight:700;margin-bottom:3px}
+.indicator-metadata dd{margin:0}
