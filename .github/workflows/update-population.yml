@@ -1,0 +1,26 @@
+name: Uppdatera befolkningsokning fran SCB
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "25 7 15 3 *"
+permissions:
+  contents: write
+jobs:
+  import-population:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Hamta och validera SCB:s arsstatistik
+        run: python scripts/update_population.py
+      - name: Publicera endast vid forandring
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/population.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update Lulea annual population from SCB"
+            git push
+          fi
