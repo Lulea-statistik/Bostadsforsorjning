@@ -48,9 +48,9 @@
       "name": "Medel- och medianhyra",
       "topic": "Bostadsmarknad",
       "unit": "Kr/m²/år",
-      "provider": "Luleå kommun / bostadsbolag",
+      "provider": "SCB",
       "pages": "16, 23",
-      "definition": "Hyra i befintligt bestånd; nybyggnation exkluderas enligt programindikatorn.",
+      "definition": "Medel- och medianhyra per m² i befintliga hyreslägenheter, årshyra samt ny månadshyra, med SCB:s felmarginaler. Specialbostäder och specialavtal exkluderas.",
       "value": null
     },
     {
