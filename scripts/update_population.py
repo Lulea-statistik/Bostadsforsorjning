@@ -17,11 +17,26 @@ def request(url, payload=None):
     with urllib.request.urlopen(urllib.request.Request(url, data=payload, headers=headers), timeout=45) as response:
         return json.load(response)
 
+def total_code(variable):
+    """Choose only an explicit SCB aggregate; never sum CKM subgroups."""
+    values = variable["values"]
+    labels = variable["valueTexts"]
+    matches = [value for value, label in zip(values, labels)
+               if label.strip().casefold() in (
+                   "totalt", "total", "samtliga", "samtliga åldrar",
+                   "alla åldrar", "alla civilstånd", "båda könen", "summa")]
+    if len(matches) != 1:
+        raise ValueError(
+            f"No unique published total for required dimension {variable['code']}: "
+            f"{list(zip(values, labels))[:15]}")
+    return matches[0]
+
 def fetch_table(name):
     url = BASE + name
     metadata = request(url)
     variables = metadata["variables"]
     selectors = []
+    chosen_dimensions = {}
     for v in variables:
         code = v["code"]
         if code == "Region":
@@ -35,15 +50,15 @@ def fetch_table(name):
                 raise ValueError(f"Folkmangd measure ambiguous in {name}: {v['valueTexts']}")
             vals = matches
         elif v.get("elimination") is True:
-            # PxWeb v1 automatically aggregates omitted eliminable dimensions.
-            # Civilstand and Kon have no explicit total code; omitting them is
-            # essential. For Alder SCB selects its supplied aggregate ("tot").
-            # This avoids retrieving many disaggregated cells and, in CKM
-            # tables, adding perturbations from separately protected cells.
+            # Leave optional dimensions to SCB's published aggregate/elimination.
             continue
+        elif code in ("Civilstand", "Alder", "Kon"):
+            vals = [total_code(v)]
         else:
             raise ValueError(f"Mandatory SCB dimension needs explicit handling: {code}")
         selectors.append({"code": code, "selection": {"filter": "item", "values": vals}})
+        if code not in ("ContentsCode", "Tid"):
+            chosen_dimensions[code] = vals[0]
     result = request(url, {"query": selectors, "response": {"format": "json"}})
     # PxWeb returns dimension metadata in columns. Position of Tid can change,
     # so never infer a year from four-digit keys: municipality 2580 is also four digits.
@@ -56,13 +71,18 @@ def fetch_table(name):
     measures = [col for col in columns if col.get("type") == "c"]
     if len(measures) != 1 or codes.count("Tid") != 1 or codes.count("Region") != 1:
         raise ValueError(f"Unexpected SCB column types in {name}: {columns}")
-    if len(dimensions) != 2:
+    if len(codes) != len(set(codes)) or any(
+        code not in chosen_dimensions and code != "Tid" for code in codes
+    ):
         raise ValueError(f"Unexpected extra dimensions in {name}: {codes}")
     time_index, region_index = codes.index("Tid"), codes.index("Region")
     output = {}
     for row in result["data"]:
         keys = row["key"]
-        if len(keys) != len(codes) or keys[region_index] != "2580":
+        if len(keys) != len(codes) or any(
+            keys[i] != chosen_dimensions[code]
+            for i, code in enumerate(codes) if code != "Tid"
+        ):
             raise ValueError(f"Unexpected SCB dimensions or municipality in {name}: {keys}")
         time_key = keys[time_index]
         if len(time_key) != 4 or not time_key.isdigit() or not 1900 <= int(time_key) <= 2100:
