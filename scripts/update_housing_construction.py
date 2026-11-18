@@ -57,7 +57,7 @@ def convert(metadata, result):
         raise ValueError(f"Unexpected SCB dimensions {codes}")
     if len(measures) != 2:
         raise ValueError(f"Expected two measure columns, found {measures}")
-    selected = {c["code"]: m for m, c in ((key, chosen[key]) for key in MEASURES)}
+    selected = {code: metric for metric, code in chosen.items()}
     # PxWeb JSON measure columns use selected measure codes, with readable text.
     measure_keys = []
     for col in measures:
