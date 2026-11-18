@@ -1,0 +1,31 @@
+name: Uppdatera medelhyra och medianhyra fran SCB
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "35 8 * * 3"
+permissions:
+  contents: write
+concurrency:
+  group: lulea-scb-rent
+  cancel-in-progress: false
+jobs:
+  import-rent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Testa SCB hyresimport
+        run: python -m unittest discover -s tests -p "test_*.py"
+      - name: Hamta medelhyra medianhyra och felmarginal
+        run: python scripts/update_rent.py
+      - name: Publicera vid forandring
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/rent.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update Lulea SCB rent indicators"
+            git push
+          fi
