@@ -1,0 +1,178 @@
+{
+  "municipality": "2580",
+  "name": "Luleå",
+  "source_url": "https://api.scb.se/OV0104/v1/doris/sv/ssd/BO/BO0406/BO0406E/BO0406Tab01",
+  "updated_at_utc": "2026-11-18T12:05:21+00:00",
+  "units": {
+    "annual": "kr/m²/år",
+    "new_monthly": "kr/m²/månad"
+  },
+  "method_note": "Årshyran omfattar hela året. Ny månadshyra avser hyran efter årets hyresändring. Hyra inklusive värme och vatten, exklusive hushållsel och garage/bilplats. Specialbostäder och specialavtal ingår inte. SCB:s felmarginaler återges separat.",
+  "data": [
+    {
+      "year": 2016,
+      "annual": {
+        "median": 869,
+        "median_margin": 36,
+        "mean": 926,
+        "mean_margin": 46
+      },
+      "new_monthly": {
+        "median": 73,
+        "median_margin": 3,
+        "mean": 77,
+        "mean_margin": 4
+      }
+    },
+    {
+      "year": 2017,
+      "annual": {
+        "median": 920,
+        "median_margin": 48,
+        "mean": 952,
+        "mean_margin": 42
+      },
+      "new_monthly": {
+        "median": 77,
+        "median_margin": 4,
+        "mean": 79,
+        "mean_margin": 3
+      }
+    },
+    {
+      "year": 2018,
+      "annual": {
+        "median": 937,
+        "median_margin": 54,
+        "mean": 1021,
+        "mean_margin": 59
+      },
+      "new_monthly": {
+        "median": 78,
+        "median_margin": 4,
+        "mean": 86,
+        "mean_margin": 5
+      }
+    },
+    {
+      "year": 2019,
+      "annual": {
+        "median": 939,
+        "median_margin": 50,
+        "mean": 1006,
+        "mean_margin": 57
+      },
+      "new_monthly": {
+        "median": 79,
+        "median_margin": 4,
+        "mean": 85,
+        "mean_margin": 5
+      }
+    },
+    {
+      "year": 2020,
+      "annual": {
+        "median": 971,
+        "median_margin": 46,
+        "mean": 1008,
+        "mean_margin": 53
+      },
+      "new_monthly": {
+        "median": 82,
+        "median_margin": 4,
+        "mean": 85,
+        "mean_margin": 4
+      }
+    },
+    {
+      "year": 2021,
+      "annual": {
+        "median": 996,
+        "median_margin": 22,
+        "mean": 1062,
+        "mean_margin": 47
+      },
+      "new_monthly": {
+        "median": 83,
+        "median_margin": 2,
+        "mean": 89,
+        "mean_margin": 4
+      }
+    },
+    {
+      "year": 2022,
+      "annual": {
+        "median": 1014,
+        "median_margin": 38,
+        "mean": 1093,
+        "mean_margin": 53
+      },
+      "new_monthly": {
+        "median": 85,
+        "median_margin": 3,
+        "mean": 92,
+        "mean_margin": 4
+      }
+    },
+    {
+      "year": 2023,
+      "annual": {
+        "median": 1132,
+        "median_margin": 68,
+        "mean": 1197,
+        "mean_margin": 58
+      },
+      "new_monthly": {
+        "median": 97,
+        "median_margin": 6,
+        "mean": 102,
+        "mean_margin": 5
+      }
+    },
+    {
+      "year": 2024,
+      "annual": {
+        "median": 1228,
+        "median_margin": 73,
+        "mean": 1280,
+        "mean_margin": 57
+      },
+      "new_monthly": {
+        "median": 105,
+        "median_margin": 8,
+        "mean": 109,
+        "mean_margin": 5
+      }
+    },
+    {
+      "year": 2025,
+      "annual": {
+        "median": 1348,
+        "median_margin": 135,
+        "mean": 1374,
+        "mean_margin": 64
+      },
+      "new_monthly": {
+        "median": 115,
+        "median_margin": 12,
+        "mean": 117,
+        "mean_margin": 5
+      }
+    },
+    {
+      "year": 2026,
+      "annual": {
+        "median": 1310,
+        "median_margin": 48,
+        "mean": 1416,
+        "mean_margin": 53
+      },
+      "new_monthly": {
+        "median": 111,
+        "median_margin": 4,
+        "mean": 119,
+        "mean_margin": 4
+      }
+    }
+  ]
+}
