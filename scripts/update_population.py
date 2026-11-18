@@ -45,12 +45,22 @@ def fetch_table(name):
             raise ValueError(f"Mandatory SCB dimension needs explicit handling: {code}")
         selectors.append({"code": code, "selection": {"filter": "item", "values": vals}})
     result = request(url, {"query": selectors, "response": {"format": "json"}})
+    # PxWeb returns dimension metadata in columns. Position of Tid can change,
+    # so never infer a year from four-digit keys: municipality 2580 is also four digits.
+    columns = result.get("columns", [])
+    codes = [column["code"] for column in columns]
+    if codes.count("Tid") != 1 or codes.count("Region") != 1:
+        raise ValueError(f"Missing/ambiguous Tid or Region dimension in {name}: {codes}")
+    time_index, region_index = codes.index("Tid"), codes.index("Region")
     output = {}
     for row in result["data"]:
-        # The returned keys are in requested dimension order.
-        year = next((int(k) for k in row["key"] if len(k) == 4 and k.isdigit()), None)
-        if year is None:
-            raise ValueError(f"No year in returned data from {name}")
+        keys = row["key"]
+        if len(keys) != len(codes) or keys[region_index] != "2580":
+            raise ValueError(f"Unexpected SCB dimensions or municipality in {name}: {keys}")
+        time_key = keys[time_index]
+        if len(time_key) != 4 or not time_key.isdigit() or not 1900 <= int(time_key) <= 2100:
+            raise ValueError(f"Invalid annual time key in {name}: {time_key}")
+        year = int(time_key)
         value = row["values"][0]
         if not str(value).strip().isdigit():
             raise ValueError(f"Missing/invalid annual population {year}: {value}")
