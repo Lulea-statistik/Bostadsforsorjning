@@ -65,3 +65,14 @@ main.wrap>.page{width:100%;min-width:0}
 .housing-completed{border-color:#b63d51}
 #housing-partial-note{font-size:.92rem}
 #housing-data-area .population-data-table{min-width:0}
+
+/* SCB rent series: same visual language as the other indicator panels. */
+#indicators tr[data-indicator-detail="rent"]{cursor:pointer}
+#indicators tr[data-indicator-detail="rent"]:hover{background:#faf1f3}
+#rent-close{background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:6px;cursor:pointer;font:inherit}
+#rent-close:focus-visible{outline:3px solid #8b0820;outline-offset:3px}
+#rent-chart{display:block;width:100%;min-width:520px;height:auto;background:white;border:1px solid var(--line);border-radius:8px}
+#rent-chart text{font-family:inherit;fill:var(--ink);font-size:12px}
+.rent-mean{border-color:#316c80}
+.rent-median{border-color:#b63d51}
+#rent-data-area .population-data-table{min-width:0}
