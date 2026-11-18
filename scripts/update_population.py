@@ -21,6 +21,14 @@ def total_code(variable):
     """Choose only an explicit SCB aggregate; never sum CKM subgroups."""
     values = variable["values"]
     labels = variable["valueTexts"]
+    # CKM's official all-ages code, confirmed in workflow run #7.
+    # Other age labels may also begin with "totalt", making generic matching
+    # ambiguous; choose only this documented code and verify its label.
+    if variable["code"] == "Alder" and "TotSA" in values:
+        label = labels[values.index("TotSA")].strip().casefold()
+        if label != "totalt, samtliga åldrar":
+            raise ValueError(f"Unexpected label for Alder TotSA: {label}")
+        return "TotSA"
     # SCB also labels a published aggregate "totalt, samtliga civilstånd".
     # Accept a total only when the label starts with the standalone word
     # "totalt" (or is one of the documented aggregate synonyms), and require
