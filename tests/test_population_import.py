@@ -37,5 +37,57 @@ class PxWebDimensionTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "Unexpected SCB dimensions"):
                 update_population.fetch_table("BefolkningNy")
 
+
+    def test_ckm_required_aggregate_dimensions(self):
+        # Synthetic example of mandatory CKM dimensions with published totals.
+        self.metadata["variables"].append({
+            "code": "Alder", "values": ["0", "tot"],
+            "valueTexts": ["0 år", "Totalt"]})
+        self.metadata["variables"][-2] = {
+            "code": "Civilstand", "elimination": False,
+            "values": ["OG", "G", "TOT"],
+            "valueTexts": ["ogifta", "gifta", "Totalt"]}
+        self.response["columns"] = [
+            {"code": "Region", "type": "d"},
+            {"code": "Civilstand", "type": "d"},
+            {"code": "Alder", "type": "d"},
+            {"code": "Tid", "type": "t"},
+            {"code": "BE0101N1", "type": "c"}]
+        self.response["data"] = [
+            {"key": ["2580", "TOT", "tot", "1968"], "values": ["63000"]},
+            {"key": ["2580", "TOT", "tot", "1969"], "values": ["63500"]}]
+        def fake_request(url, payload=None):
+            if payload is None:
+                return self.metadata
+            requested = {q["code"]: q["selection"]["values"] for q in payload["query"]}
+            self.assertEqual(requested["Civilstand"], ["TOT"])
+            self.assertEqual(requested["Alder"], ["tot"])
+            return self.response
+        with patch.object(update_population, "request", side_effect=fake_request):
+            self.assertEqual(update_population.fetch_table("BefolkningCKM"), {1968: 63000, 1969: 63500})
+
+    def test_ckm_without_published_total_fails_closed(self):
+        self.metadata["variables"][-1] = {
+            "code": "Civilstand", "elimination": False,
+            "values": ["OG", "G"], "valueTexts": ["ogifta", "gifta"]}
+        with patch.object(update_population, "request", return_value=self.metadata):
+            with self.assertRaisesRegex(ValueError, "No unique published total"):
+                update_population.fetch_table("BefolkningCKM")
+
+    def test_ckm_rejects_unexpected_subgroup_result(self):
+        self.metadata["variables"][-1] = {
+            "code": "Civilstand", "elimination": False,
+            "values": ["OG", "TOT"], "valueTexts": ["ogifta", "Totalt"]}
+        self.response["columns"] = [
+            {"code": "Region", "type": "d"},
+            {"code": "Civilstand", "type": "d"},
+            {"code": "Tid", "type": "t"},
+            {"code": "BE0101N1", "type": "c"}]
+        self.response["data"] = [
+            {"key": ["2580", "OG", "1968"], "values": ["63000"]}]
+        with patch.object(update_population, "request", side_effect=[self.metadata, self.response]):
+            with self.assertRaisesRegex(ValueError, "Unexpected SCB dimensions"):
+                update_population.fetch_table("BefolkningCKM")
+
 if __name__ == "__main__":
     unittest.main()
