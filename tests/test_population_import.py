@@ -38,6 +38,19 @@ class PxWebDimensionTests(unittest.TestCase):
                 update_population.fetch_table("BefolkningNy")
 
 
+    def test_ckm_real_civilstand_total_label(self):
+        # Exact code and description documented in failed GitHub run #6.
+        metadata = {"code": "Civilstand", "values": ["SC", "OG", "G", "SK", "ÄNKL"],
+                    "valueTexts": ["totalt, samtliga civilstånd", "ogifta",
+                                   "gifta", "skilda", "änkor/änklingar"]}
+        self.assertEqual(update_population.total_code(metadata), "SC")
+
+    def test_total_label_must_be_unique(self):
+        metadata = {"code": "Civilstand", "values": ["SC", "TOT"],
+                    "valueTexts": ["totalt, samtliga civilstånd", "Totalt"]}
+        with self.assertRaisesRegex(ValueError, "No unique published total"):
+            update_population.total_code(metadata)
+
     def test_ckm_required_aggregate_dimensions(self):
         # Synthetic example of mandatory CKM dimensions with published totals.
         self.metadata["variables"].append({
