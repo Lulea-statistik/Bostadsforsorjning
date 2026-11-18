@@ -1,0 +1,31 @@
+name: Uppdatera bostadsbyggande fran SCB
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "45 8 * * 2"
+permissions:
+  contents: write
+concurrency:
+  group: housing-construction-update
+  cancel-in-progress: false
+jobs:
+  import-housing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Testa kvartalsimport och delarsmarkering
+        run: python -m unittest discover -s tests -p "test_*.py"
+      - name: Hamta och kontrollera SCB-data
+        run: python scripts/update_housing_construction.py
+      - name: Publicera vid forandring
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/housing_construction.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update Lulea SCB housing construction"
+            git push
+          fi

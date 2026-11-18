@@ -15,12 +15,12 @@
     },
     {
       "id": 2,
-      "name": "Färdigställda bostäder",
+      "name": "Bostadsbyggande – påbörjade och färdigställda",
       "topic": "Bostadsbyggande",
-      "unit": "Bostäder per år",
-      "provider": "SCB / Luleå kommun",
+      "unit": "Lägenheter per år",
+      "provider": "SCB",
       "pages": "15, 23",
-      "definition": "Antal färdigställda bostäder inom kommunen under kalenderåret.",
+      "definition": "Antal påbörjade och färdigställda lägenheter i nybyggda hus, Luleå kommun. Kvartalsvärden summerade per år; sista året kan vara ett delår.",
       "value": null
     },
     {
