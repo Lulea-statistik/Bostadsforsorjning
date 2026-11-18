@@ -1,0 +1,303 @@
+{
+  "municipality": "2580",
+  "name": "Luleå",
+  "reference": "Folkmängd den 31 december respektive år",
+  "updated_at_utc": "2026-11-18T10:35:34+00:00",
+  "source_urls": [
+    "https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningNy",
+    "https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningCKM"
+  ],
+  "method_note": "Från 2025 använder SCB Cell Key Method (CKM). Små slumpmässiga skillnader mot andra publicerade del- och totalvärden kan förekomma.",
+  "data": [
+    {
+      "year": 1968,
+      "population": 57220,
+      "change": null
+    },
+    {
+      "year": 1969,
+      "population": 57705,
+      "change": 485
+    },
+    {
+      "year": 1970,
+      "population": 58878,
+      "change": 1173
+    },
+    {
+      "year": 1971,
+      "population": 59377,
+      "change": 499
+    },
+    {
+      "year": 1972,
+      "population": 60396,
+      "change": 1019
+    },
+    {
+      "year": 1973,
+      "population": 62119,
+      "change": 1723
+    },
+    {
+      "year": 1974,
+      "population": 64322,
+      "change": 2203
+    },
+    {
+      "year": 1975,
+      "population": 66290,
+      "change": 1968
+    },
+    {
+      "year": 1976,
+      "population": 67190,
+      "change": 900
+    },
+    {
+      "year": 1977,
+      "population": 67405,
+      "change": 215
+    },
+    {
+      "year": 1978,
+      "population": 67180,
+      "change": -225
+    },
+    {
+      "year": 1979,
+      "population": 67190,
+      "change": 10
+    },
+    {
+      "year": 1980,
+      "population": 66834,
+      "change": -356
+    },
+    {
+      "year": 1981,
+      "population": 66869,
+      "change": 35
+    },
+    {
+      "year": 1982,
+      "population": 66354,
+      "change": -515
+    },
+    {
+      "year": 1983,
+      "population": 66512,
+      "change": 158
+    },
+    {
+      "year": 1984,
+      "population": 66811,
+      "change": 299
+    },
+    {
+      "year": 1985,
+      "population": 66557,
+      "change": -254
+    },
+    {
+      "year": 1986,
+      "population": 66526,
+      "change": -31
+    },
+    {
+      "year": 1987,
+      "population": 66719,
+      "change": 193
+    },
+    {
+      "year": 1988,
+      "population": 67443,
+      "change": 724
+    },
+    {
+      "year": 1989,
+      "population": 67903,
+      "change": 460
+    },
+    {
+      "year": 1990,
+      "population": 68412,
+      "change": 509
+    },
+    {
+      "year": 1991,
+      "population": 68523,
+      "change": 111
+    },
+    {
+      "year": 1992,
+      "population": 68924,
+      "change": 401
+    },
+    {
+      "year": 1993,
+      "population": 69794,
+      "change": 870
+    },
+    {
+      "year": 1994,
+      "population": 70694,
+      "change": 900
+    },
+    {
+      "year": 1995,
+      "population": 71106,
+      "change": 412
+    },
+    {
+      "year": 1996,
+      "population": 71238,
+      "change": 132
+    },
+    {
+      "year": 1997,
+      "population": 71491,
+      "change": 253
+    },
+    {
+      "year": 1998,
+      "population": 71360,
+      "change": -131
+    },
+    {
+      "year": 1999,
+      "population": 71251,
+      "change": -109
+    },
+    {
+      "year": 2000,
+      "population": 71652,
+      "change": 401
+    },
+    {
+      "year": 2001,
+      "population": 71952,
+      "change": 300
+    },
+    {
+      "year": 2002,
+      "population": 72139,
+      "change": 187
+    },
+    {
+      "year": 2003,
+      "population": 72237,
+      "change": 98
+    },
+    {
+      "year": 2004,
+      "population": 72565,
+      "change": 328
+    },
+    {
+      "year": 2005,
+      "population": 72751,
+      "change": 186
+    },
+    {
+      "year": 2006,
+      "population": 73313,
+      "change": 562
+    },
+    {
+      "year": 2007,
+      "population": 73146,
+      "change": -167
+    },
+    {
+      "year": 2008,
+      "population": 73406,
+      "change": 260
+    },
+    {
+      "year": 2009,
+      "population": 73950,
+      "change": 544
+    },
+    {
+      "year": 2010,
+      "population": 74178,
+      "change": 228
+    },
+    {
+      "year": 2011,
+      "population": 74426,
+      "change": 248
+    },
+    {
+      "year": 2012,
+      "population": 74905,
+      "change": 479
+    },
+    {
+      "year": 2013,
+      "population": 75383,
+      "change": 478
+    },
+    {
+      "year": 2014,
+      "population": 75966,
+      "change": 583
+    },
+    {
+      "year": 2015,
+      "population": 76088,
+      "change": 122
+    },
+    {
+      "year": 2016,
+      "population": 76770,
+      "change": 682
+    },
+    {
+      "year": 2017,
+      "population": 77470,
+      "change": 700
+    },
+    {
+      "year": 2018,
+      "population": 77832,
+      "change": 362
+    },
+    {
+      "year": 2019,
+      "population": 78105,
+      "change": 273
+    },
+    {
+      "year": 2020,
+      "population": 78549,
+      "change": 444
+    },
+    {
+      "year": 2021,
+      "population": 78867,
+      "change": 318
+    },
+    {
+      "year": 2022,
+      "population": 79244,
+      "change": 377
+    },
+    {
+      "year": 2023,
+      "population": 79352,
+      "change": 108
+    },
+    {
+      "year": 2024,
+      "population": 79645,
+      "change": 293
+    },
+    {
+      "year": 2025,
+      "population": 80304,
+      "change": 659
+    }
+  ]
+}
