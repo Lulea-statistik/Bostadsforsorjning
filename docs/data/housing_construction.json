@@ -1,0 +1,153 @@
+{
+  "municipality": "2580",
+  "name": "Luleå",
+  "source_url": "https://api.scb.se/OV0104/v1/doris/sv/ssd/BO/BO0101/BO0101C/LagenhetNyKv26",
+  "updated_at_utc": "2026-11-18T11:50:17+00:00",
+  "measure_labels": {
+    "started": "påbörjade lägenheter i nybyggda hus",
+    "completed": "färdigställda lägenheter i nybyggda hus"
+  },
+  "method_note": "Fyra kvartal summeras för helår. Senaste året visas också när färre än fyra kvartal finns, märkt 'hittills i år'. Det värdet är inte jämförbart med helår och visas med streckad sista linjesträcka.",
+  "data": [
+    {
+      "year": 2007,
+      "started": 54,
+      "completed": 441,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2008,
+      "started": 49,
+      "completed": 142,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2009,
+      "started": 21,
+      "completed": 32,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2010,
+      "started": 28,
+      "completed": 24,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2011,
+      "started": 221,
+      "completed": 28,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2012,
+      "started": 326,
+      "completed": 296,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2013,
+      "started": 71,
+      "completed": 69,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2014,
+      "started": 402,
+      "completed": 591,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2015,
+      "started": 561,
+      "completed": 148,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2016,
+      "started": 535,
+      "completed": 317,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2017,
+      "started": 583,
+      "completed": 476,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2018,
+      "started": 590,
+      "completed": 294,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2019,
+      "started": 222,
+      "completed": 683,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2020,
+      "started": 548,
+      "completed": 281,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2021,
+      "started": 446,
+      "completed": 660,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2022,
+      "started": 170,
+      "completed": 346,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2023,
+      "started": 254,
+      "completed": 417,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2024,
+      "started": 113,
+      "completed": 184,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2025,
+      "started": 55,
+      "completed": 116,
+      "partial": false,
+      "through_quarter": 4
+    },
+    {
+      "year": 2026,
+      "started": 183,
+      "completed": 158,
+      "partial": true,
+      "through_quarter": 2
+    }
+  ]
+}
