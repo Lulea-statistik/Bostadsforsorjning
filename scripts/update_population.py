@@ -21,10 +21,18 @@ def total_code(variable):
     """Choose only an explicit SCB aggregate; never sum CKM subgroups."""
     values = variable["values"]
     labels = variable["valueTexts"]
+    # SCB also labels a published aggregate "totalt, samtliga civilstånd".
+    # Accept a total only when the label starts with the standalone word
+    # "totalt" (or is one of the documented aggregate synonyms), and require
+    # exactly one candidate. Never infer a total from subgroups.
+    def is_total(label):
+        normalized = " ".join(label.casefold().split())
+        return (normalized == "totalt" or normalized.startswith("totalt,")
+                or normalized.startswith("totalt ") or normalized in (
+                    "total", "samtliga", "samtliga åldrar", "alla åldrar",
+                    "alla civilstånd", "båda könen", "summa"))
     matches = [value for value, label in zip(values, labels)
-               if label.strip().casefold() in (
-                   "totalt", "total", "samtliga", "samtliga åldrar",
-                   "alla åldrar", "alla civilstånd", "båda könen", "summa")]
+               if is_total(label)]
     if len(matches) != 1:
         raise ValueError(
             f"No unique published total for required dimension {variable['code']}: "
