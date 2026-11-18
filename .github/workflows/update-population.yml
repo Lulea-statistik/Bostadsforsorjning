@@ -13,6 +13,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Testa SCB svarstruktur
+        run: python -m unittest discover -s tests -p "test_*.py"
       - name: Hamta och validera SCB:s arsstatistik
         run: python scripts/update_population.py
       - name: Publicera endast vid forandring

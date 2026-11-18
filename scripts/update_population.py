@@ -48,9 +48,16 @@ def fetch_table(name):
     # PxWeb returns dimension metadata in columns. Position of Tid can change,
     # so never infer a year from four-digit keys: municipality 2580 is also four digits.
     columns = result.get("columns", [])
-    codes = [column["code"] for column in columns]
-    if codes.count("Tid") != 1 or codes.count("Region") != 1:
-        raise ValueError(f"Missing/ambiguous Tid or Region dimension in {name}: {codes}")
+    # PxWeb JSON's columns also contain type=c (the statistical measure).
+    # Measures live in row["values"], not in row["key"]. Only type=d
+    # dimensions and type=t time columns correspond to keys.
+    dimensions = [col for col in columns if col.get("type") in ("d", "t")]
+    codes = [col["code"] for col in dimensions]
+    measures = [col for col in columns if col.get("type") == "c"]
+    if len(measures) != 1 or codes.count("Tid") != 1 or codes.count("Region") != 1:
+        raise ValueError(f"Unexpected SCB column types in {name}: {columns}")
+    if len(dimensions) != 2:
+        raise ValueError(f"Unexpected extra dimensions in {name}: {codes}")
     time_index, region_index = codes.index("Tid"), codes.index("Region")
     output = {}
     for row in result["data"]:
