@@ -51,6 +51,20 @@ class PxWebDimensionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "No unique published total"):
             update_population.total_code(metadata)
 
+    def test_real_ckm_age_total_preferred_over_other_total_candidates(self):
+        # SCB metadata code and label from failed GitHub Actions run #7.
+        metadata = {"code": "Alder",
+                    "values": ["0", "TotSA", "-4", "tot"],
+                    "valueTexts": ["0 år", "totalt, samtliga åldrar",
+                                   "0–4 år", "Totalt"]}
+        self.assertEqual(update_population.total_code(metadata), "TotSA")
+
+    def test_ckm_age_total_label_mismatch_is_rejected(self):
+        metadata = {"code": "Alder", "values": ["TotSA"],
+                    "valueTexts": ["5–9 år"]}
+        with self.assertRaisesRegex(ValueError, "Unexpected label"):
+            update_population.total_code(metadata)
+
     def test_ckm_required_aggregate_dimensions(self):
         # Synthetic example of mandatory CKM dimensions with published totals.
         self.metadata["variables"].append({
