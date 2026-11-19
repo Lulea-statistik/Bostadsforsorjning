@@ -80,8 +80,22 @@
       "unit": "Procent",
       "provider": "SCB / Boverket",
       "pages": "17, 23",
-      "definition": "Andel trångbodda i flerbostadshus; använd explicit trångboddhetsnorm.",
-      "value": null
+      "definition": "Programmets indikator gäller trångboddhet i flerbostadshus. Boverkets publicerade mått använder en särskild sovrumsnorm (eller <20 m²/person när rumsuppgift saknas). Redovisade delmängder är inte utbytbara: samtliga hushåll respektive hushåll som hyr lägenhet i flerbostadshus.",
+      "value": null,
+      "boverketCrowding": {
+        "year": 2024,
+        "allHouseholds": {
+          "count": 2348,
+          "percent": 5.8,
+          "denominator": 40552
+        },
+        "rentedMultiDwelling": {
+          "percent": 9.6
+        },
+        "source": "https://www.boverket.se/sv/om-boverket/oppna-data/bedomning-av-bostadsbrist/",
+        "secondarySource": "https://www.bostadscentralen.se/bostadsbrist/lulea",
+        "verification": "Sekundärkälla återger Boverkets siffror; behöver stämmas av mot Boverkets originaltabell. Andelen 9,6 % gäller hushåll som hyr lägenhet i flerbostadshus, inte alla boende i flerbostadshus."
+      }
     },
     {
       "id": 9,
