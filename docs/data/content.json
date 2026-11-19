@@ -75,36 +75,21 @@
     },
     {
       "id": 8,
-      "name": "Trångboddhet i flerbostadshus",
+      "name": "Trångboddhet bland hushåll som hyr lägenhet i flerbostadshus",
       "topic": "Boendevillkor",
       "unit": "Procent",
-      "provider": "SCB / Boverket",
+      "provider": "Boverket",
       "pages": "17, 23",
-      "definition": "Andel trångbodda i flerbostadshus enligt norm 2 (SCB/Kolada N07907). Kompletterande Boverkets mått över hushållens trångboddhet bygger på en annan norm och population; dessa serier ska inte jämföras direkt.",
+      "definition": "Andel trångbodda hushåll bland hushåll som hyr lägenhet i flerbostadshus i Luleå kommun. Boverkets behovsbaserade definition. Måttet avser inte samtliga hushåll och ska inte förväxlas med trångboddhet enligt norm 2.",
       "value": null,
-      "boverketCrowding": {
-        "year": 2024,
-        "allHouseholds": {
-          "count": 2348,
-          "percent": 5.8,
-          "denominator": 40552
-        },
-        "rentedMultiDwelling": {
+      "crowdingSeries": [
+        {
+          "year": 2024,
           "percent": 9.6
-        },
-        "source": "https://www.boverket.se/sv/om-boverket/oppna-data/bedomning-av-bostadsbrist/",
-        "secondarySource": "https://www.bostadscentralen.se/bostadsbrist/lulea",
-        "verification": "Sekundärkälla återger Boverkets siffror; behöver stämmas av mot Boverkets originaltabell. Andelen 9,6 % gäller hushåll som hyr lägenhet i flerbostadshus, inte alla boende i flerbostadshus."
-      },
-      "koladaNorm2": {
-        "year": 2025,
-        "percent": 7.8,
-        "previousYear": 2024,
-        "previousPercent": 7.6,
-        "source": "https://www.kolada.se/",
-        "secondarySource": "https://sverigefakta.com/kommun/lulea/bostader",
-        "verification": "Kolada N07907, SCB via sekundär publicering; kontrollera mot primärdatat före slutlig verifiering."
-      }
+        }
+      ],
+      "sourceUrl": "https://www.boverket.se/sv/om-boverket/oppna-data/bedomning-av-bostadsbrist/",
+      "sourceStatus": "2024 års värde är hämtat från sekundär sammanställning av Boverkets statistik. Äldre årsvärden för denna specifika hushållsgrupp har inte verifierats."
     },
     {
       "id": 9,
