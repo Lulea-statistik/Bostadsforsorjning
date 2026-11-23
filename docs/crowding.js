@@ -14,7 +14,7 @@
   const x=year=>lo===hi?L+iw/2:L+(year-lo)/(hi-lo)*iw;
   const y=p=>T+ih-(p-ymin)/(ymax-ymin)*ih;
   const label=(x0,y0,t,attr={})=>svg.append(svgNode('text',{x:x0,y:y0,'text-anchor':'middle',fill:'#32404a','font-size':15,...attr},t));
-  for(let v=0;v<=ymax;v+=2){const yy=y(v);svg.append(svgNode('line',{x1:L,y1:yy,x2:W-R,y2:yy,stroke:'#d9dfe2','stroke-dasharray':'6 4'}));label(L-20,yy+5,formatOneDecimal(v)',{ 'text-anchor':'end','font-size':13})}
+  for(let v=0;v<=ymax;v+=2){const yy=y(v);svg.append(svgNode('line',{x1:L,y1:yy,x2:W-R,y2:yy,stroke:'#d9dfe2','stroke-dasharray':'6 4'}));label(L-20,yy+5,formatOneDecimal(v),{ 'text-anchor':'end','font-size':13})}
   svg.append(svgNode('line',{x1:L,y1:T+ih,x2:W-R,y2:T+ih,stroke:'#6b7280'}));
   if(data.length>1){const parts=[];data.forEach((d,i)=>parts.push((i===0?'M':'L')+x(d.year)+' '+y(d.percent)));
    svg.append(svgNode('path',{d:parts.join(' '),stroke:'#4c9b69','stroke-width':3,fill:'none','stroke-linejoin':'round'}))}
