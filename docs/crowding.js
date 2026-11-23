@@ -21,8 +21,8 @@
   for(const d of data){
    const xx=x(d.year),yy=y(d.percent);
    // Same native SVG tooltip as the rent chart, retaining source precision.
-   const marker=svgNode('circle',{cx:xx,cy:yy,r:7,fill:'#4c9b69',style:'cursor:help'});
-   const exact=Number(d.percent).toLocaleString('sv-SE',{minimumFractionDigits:1,maximumFractionDigits:4});
+   const marker=svgNode('circle',{cx:xx,cy:yy,r:7,fill:'#4c9b69',style:'cursor:default'});
+   const exact=Number(d.percent).toLocaleString('sv-SE',{minimumFractionDigits:1,maximumFractionDigits:1});
    marker.append(svgNode('title',{},'År: '+d.year+'\nAndel trångbodda: '+exact+' %'));
    svg.append(marker);
    label(xx,T+ih+28,String(d.year),{'font-size':14});
