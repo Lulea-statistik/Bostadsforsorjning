@@ -199,7 +199,15 @@ setupHousingReference();function renderIndicators(){
   const tr=element('tr');const crowding=r.id===8&&Array.isArray(r.crowdingSeries)&&r.crowdingSeries.length;
   const latest=crowding?[...r.crowdingSeries].sort((a,b)=>b.year-a.year)[0]:null;
   [r.name,r.unit,latest?latest.percent.toLocaleString('sv-SE',{minimumFractionDigits:1,maximumFractionDigits:1})+' % ('+latest.year+')':'Ej inläst',r.provider,'s. '+r.pages+' (kontroll pågår)'].forEach(t=>tr.append(element('td',t)));
-  // The matching indicator-open control is added by crowding.js, like the other pilot indicators.
+  if(crowding){
+   tr.dataset.indicatorDetail='crowding';
+   const button=element('button',r.name);
+   button.type='button';
+   button.className='indicator-open';
+   button.setAttribute('aria-controls','crowding-detail');
+   button.setAttribute('aria-expanded',String(!(q('crowding-detail')?.hidden??true)));
+   tr.cells[0].replaceChildren(button);
+  }
   tbody.append(tr);
  });
  q('indicator-count').textContent=rows.length+' av '+content.indicators.length+' nyckeltal visas.';
