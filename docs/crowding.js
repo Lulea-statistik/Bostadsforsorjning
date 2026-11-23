@@ -18,7 +18,15 @@
   svg.append(svgNode('line',{x1:L,y1:T+ih,x2:W-R,y2:T+ih,stroke:'#6b7280'}));
   if(data.length>1){const parts=[];data.forEach((d,i)=>parts.push((i===0?'M':'L')+x(d.year)+' '+y(d.percent)));
    svg.append(svgNode('path',{d:parts.join(' '),stroke:'#4c9b69','stroke-width':3,fill:'none','stroke-linejoin':'round'}))}
-  for(const d of data){const xx=x(d.year),yy=y(d.percent);svg.append(svgNode('circle',{cx:xx,cy:yy,r:5.2,fill:'#4c9b69'}));label(xx,T+ih+28,String(d.year),{'font-size':14})}
+  for(const d of data){
+   const xx=x(d.year),yy=y(d.percent);
+   // Same native SVG tooltip as the rent chart, retaining source precision.
+   const marker=svgNode('circle',{cx:xx,cy:yy,r:7,fill:'#4c9b69',style:'cursor:help'});
+   const exact=Number(d.percent).toLocaleString('sv-SE',{minimumFractionDigits:1,maximumFractionDigits:4});
+   marker.append(svgNode('title',{},'År: '+d.year+'\nAndel trångbodda: '+exact+' %'));
+   svg.append(marker);
+   label(xx,T+ih+28,String(d.year),{'font-size':14});
+  }
  }
  const tbody=el('indicators'),detail=el('crowding-detail'),close=el('crowding-close');
  if(!tbody||!detail||!close)return;
