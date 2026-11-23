@@ -28,7 +28,9 @@ main.wrap>.page{width:100%;min-width:0}
 
 /* Pilot: expand population change indicator from the table. */
 #indicators tr[data-indicator-detail="population"]{cursor:pointer}
-#indicators tr[data-indicator-detail="population"]:hover{background:#faf1f3}
+#indicators tr[data-indicator-detail]:hover{background:#faf1f3}
+#indicators tr[data-indicator-detail]{cursor:pointer}
+#indicators tr[data-indicator-detail]:focus-within{background:#faf1f3}
 #indicators .indicator-open{border:0;background:none;color:#8b0820;text-decoration:underline;text-underline-offset:3px;font:inherit;font-weight:650;cursor:pointer;padding:0;text-align:left}
 #indicators .indicator-open:focus-visible,#population-detail-close:focus-visible{outline:3px solid #8b0820;outline-offset:3px}
 .indicator-detail{margin-top:22px;border:1px solid var(--line);border-left:4px solid var(--red);border-radius:8px;padding:22px;background:#fcfcfd}
