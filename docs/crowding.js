@@ -19,13 +19,58 @@
    svg.append(svgNode('path',{d:parts.join(' '),stroke:'#4c9b69','stroke-width':3,fill:'none','stroke-linejoin':'round'}))}
   for(const d of data){const xx=x(d.year),yy=y(d.percent);svg.append(svgNode('circle',{cx:xx,cy:yy,r:5.2,fill:'#4c9b69'}));label(xx,yy-14,d.percent.toLocaleString('sv-SE',{minimumFractionDigits:1}),{'font-size':16});label(xx,T+ih+28,String(d.year),{'font-size':14})}
  }
- window.openCrowdingDetail=function(indicator){
-  const section=el('crowding-detail');if(!section)return;
-  document.querySelectorAll('.indicator-detail').forEach(e=>{e.hidden=true});
-  section.hidden=false;draw(indicator.crowdingSeries||[]);
-  const n=(indicator.crowdingSeries||[]).length;
-  el('crowding-status').textContent=n<2?'Endast 2024 har verifierats för detta mått. En linje visas först när minst två årsvärden finns; den bifogade Boverkets graf avser ett annat hushållsurval.':'';
-  section.scrollIntoView({behavior:'smooth',block:'start'});
- };
- el('crowding-close')?.addEventListener('click',()=>{el('crowding-detail').hidden=true});
+ const tbody=el('indicators'),detail=el('crowding-detail'),close=el('crowding-close');
+ if(!tbody||!detail||!close)return;
+ let opener=null;
+ const indicatorName='Trångboddhet bland hushåll som hyr lägenhet i flerbostadshus';
+ function decorate(){
+   for(const row of tbody.rows){
+     if(row.cells[0]?.textContent.trim()!==indicatorName)continue;
+     if(!row.dataset.indicatorDetail){
+       row.dataset.indicatorDetail='crowding';
+       const button=document.createElement('button');
+       button.type='button';
+       button.className='indicator-open';
+       button.textContent=indicatorName;
+       button.setAttribute('aria-controls','crowding-detail');
+       row.cells[0].replaceChildren(button);
+     }
+     row.querySelector('.indicator-open')?.setAttribute('aria-expanded',String(!detail.hidden));
+   }
+ }
+ function toggle(){
+   if(detail.hidden){
+     document.querySelectorAll('.indicator-detail').forEach(other=>{if(other!==detail)other.hidden=true});
+     detail.hidden=false;
+     const selected=window.crowdingObservations||[];
+     draw(selected);
+     el('crowding-status').textContent=selected.length<2
+       ? 'Endast ett årsvärde finns för det valda måttet. En linje visas när minst två år finns.'
+       : '';
+     detail.scrollIntoView({behavior:'smooth',block:'nearest'});
+   }else detail.hidden=true;
+   decorate();
+ }
+ // Use the same interactive button styling, click delegation and focus handling
+ // as the population, housing and rent indicators.
+ tbody.addEventListener('click',event=>{
+   const row=event.target.closest('tr[data-indicator-detail="crowding"]');
+   if(!row)return;
+   opener=row.querySelector('.indicator-open');
+   toggle();
+ });
+ close.addEventListener('click',()=>{
+   detail.hidden=true;
+   decorate();
+   if(opener?.isConnected)opener.focus();
+ });
+ new MutationObserver(decorate).observe(tbody,{childList:true});
+ decorate();
+ // The table is populated asynchronously from content.json by app.js.
+ fetch('data/content.json').then(r=>{if(!r.ok)throw Error('Data kunde inte läsas');return r.json()})
+  .then(json=>{
+    const indicator=json.indicators?.find(r=>r.id===8);
+    window.crowdingObservations=indicator?.crowdingSeries||[];
+  })
+  .catch(()=>{el('crowding-status').textContent='Trångboddhetsserien kunde inte läsas.'});
 })();
