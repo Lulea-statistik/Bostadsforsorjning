@@ -26,17 +26,19 @@
  const indicatorName='Trångboddhet bland hushåll som hyr lägenhet i flerbostadshus';
  function decorate(){
    for(const row of tbody.rows){
+     // Re-create the exact same button type as rent-pilot.js even after search/filter redraws.
      if(row.cells[0]?.textContent.trim()!==indicatorName)continue;
-     if(!row.dataset.indicatorDetail){
-       row.dataset.indicatorDetail='crowding';
-       const button=document.createElement('button');
+     row.dataset.indicatorDetail='crowding';
+     let button=row.cells[0].querySelector('button.indicator-open');
+     if(!button){
+       button=document.createElement('button');
        button.type='button';
        button.className='indicator-open';
        button.textContent=indicatorName;
-       button.setAttribute('aria-controls','crowding-detail');
        row.cells[0].replaceChildren(button);
      }
-     row.querySelector('.indicator-open')?.setAttribute('aria-expanded',String(!detail.hidden));
+     button.setAttribute('aria-controls','crowding-detail');
+     button.setAttribute('aria-expanded',String(!detail.hidden));
    }
  }
  function toggle(){
