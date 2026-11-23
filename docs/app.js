@@ -199,10 +199,7 @@ setupHousingReference();function renderIndicators(){
   const tr=element('tr');const crowding=r.id===8&&Array.isArray(r.crowdingSeries)&&r.crowdingSeries.length;
   const latest=crowding?[...r.crowdingSeries].sort((a,b)=>b.year-a.year)[0]:null;
   [r.name,r.unit,latest?latest.percent.toLocaleString('sv-SE',{maximumFractionDigits:1})+' % ('+latest.year+')':'Ej inläst',r.provider,'s. '+r.pages+' (kontroll pågår)'].forEach(t=>tr.append(element('td',t)));
-  if(crowding){tr.classList.add('indicator-drilldown');tr.tabIndex=0;tr.setAttribute('role','button');tr.setAttribute('aria-label','Visa trångboddhet som diagram');
-   const open=()=>window.openCrowdingDetail?.(r);
-   tr.addEventListener('click',open);tr.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
-  }
+  // The matching indicator-open control is added by crowding.js, like the other pilot indicators.
   tbody.append(tr);
  });
  q('indicator-count').textContent=rows.length+' av '+content.indicators.length+' nyckeltal visas.';
