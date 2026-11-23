@@ -198,7 +198,7 @@ setupHousingReference();function renderIndicators(){
  rows.forEach(r=>{
   const tr=element('tr');const crowding=r.id===8&&Array.isArray(r.crowdingSeries)&&r.crowdingSeries.length;
   const latest=crowding?[...r.crowdingSeries].sort((a,b)=>b.year-a.year)[0]:null;
-  [r.name,r.unit,latest?latest.percent.toLocaleString('sv-SE',{maximumFractionDigits:1})+' % ('+latest.year+')':'Ej inläst',r.provider,'s. '+r.pages+' (kontroll pågår)'].forEach(t=>tr.append(element('td',t)));
+  [r.name,r.unit,latest?latest.percent.toLocaleString('sv-SE',{minimumFractionDigits:1,maximumFractionDigits:1})+' % ('+latest.year+')':'Ej inläst',r.provider,'s. '+r.pages+' (kontroll pågår)'].forEach(t=>tr.append(element('td',t)));
   // The matching indicator-open control is added by crowding.js, like the other pilot indicators.
   tbody.append(tr);
  });
