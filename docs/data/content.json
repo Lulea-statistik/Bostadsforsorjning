@@ -84,12 +84,61 @@
       "value": null,
       "crowdingSeries": [
         {
+          "year": 2012,
+          "percent": 12.6887
+        },
+        {
+          "year": 2013,
+          "percent": 13.102
+        },
+        {
+          "year": 2014,
+          "percent": 13.0141
+        },
+        {
+          "year": 2015,
+          "percent": 12.8946
+        },
+        {
+          "year": 2016,
+          "percent": 12.7495
+        },
+        {
+          "year": 2017,
+          "percent": 12.5098
+        },
+        {
+          "year": 2018,
+          "percent": 11.5349
+        },
+        {
+          "year": 2019,
+          "percent": 11.0753
+        },
+        {
+          "year": 2020,
+          "percent": 10.5232
+        },
+        {
+          "year": 2021,
+          "percent": 10.2298
+        },
+        {
+          "year": 2022,
+          "percent": 10.5398
+        },
+        {
+          "year": 2023,
+          "percent": 9.7135
+        },
+        {
           "year": 2024,
-          "percent": 9.6
+          "percent": 9.5823
         }
       ],
       "sourceUrl": "https://www.boverket.se/sv/om-boverket/oppna-data/bedomning-av-bostadsbrist/",
-      "sourceStatus": "2024 års värde är hämtat från sekundär sammanställning av Boverkets statistik. Äldre årsvärden för denna specifika hushållsgrupp har inte verifierats."
+      "sourceStatus": "Verifierad direkt mot Boverkets originalfil (XLSB), blad Kommun. Filter: Kommunkod 2580, Urval Alla, Hushållstyp Totalt, Boendeform Hyresrätt flerbostadshus, Åldersgrupp Totalt, Kön Totalt. Fält: Andel trångbodda hushåll, multiplicerat med 100; publicerad precision behålls till fyra decimaler i procent.",
+      "sourceFile": "underlag-bedomning-bostadsbrist---tabeller.xlsb"
     },
     {
       "id": 9,
