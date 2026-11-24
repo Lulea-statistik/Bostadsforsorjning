@@ -2,7 +2,7 @@
   "municipality": "2580",
   "name": "Luleå",
   "source_url": "https://api.scb.se/OV0104/v1/doris/sv/ssd/BO/BO0101/BO0101C/LagenhetNyKv26",
-  "updated_at_utc": "2026-11-18T11:50:17+00:00",
+  "updated_at_utc": "2026-11-24T19:41:52+00:00",
   "measure_labels": {
     "started": "påbörjade lägenheter i nybyggda hus",
     "completed": "färdigställda lägenheter i nybyggda hus"
@@ -144,10 +144,10 @@
     },
     {
       "year": 2026,
-      "started": 183,
-      "completed": 158,
+      "started": 187,
+      "completed": 161,
       "partial": true,
-      "through_quarter": 2
+      "through_quarter": 3
     }
   ]
 }
