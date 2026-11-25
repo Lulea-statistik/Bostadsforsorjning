@@ -2,7 +2,7 @@
   "municipality": "2580",
   "name": "Luleå",
   "source_url": "https://api.scb.se/OV0104/v1/doris/sv/ssd/BO/BO0406/BO0406E/BO0406Tab01",
-  "updated_at_utc": "2026-11-18T12:05:21+00:00",
+  "updated_at_utc": "2026-11-25T18:49:07+00:00",
   "units": {
     "annual": "kr/m²/år",
     "new_monthly": "kr/m²/månad"
